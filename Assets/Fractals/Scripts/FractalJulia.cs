@@ -142,25 +142,6 @@ public class FractalJulia : MonoBehaviour
 		audioController.ClicSound();
 	}
 
-	public void SetShapeFirst(Shape sh)
-	{
-		shape = sh;
-		decorObject = shape.shapeObject;
-		decorObject.transform.localScale = new Vector3(size * adjustSize, size * adjustSize, size * adjustSize);
-		buttonShape.GetComponent<ShapeView>().LoadOnlyData(shape);
-		HideScrolls();
-	}
-
-	public void SetFunctionFirst(Function fn)
-	{
-		function = fn;
-		buttonFunction.GetComponent<FunctionView>().LoadOnlyData(function);
-		functionConstant = new Complex(fn.cX, fn.cY);
-		inputCx.text = functionConstant.x.ToString();
-		inputCy.text = functionConstant.y.ToString();
-		HideScrolls();
-	}
-
 	private void ClicSound(string value)
 	{
 		audioController.ClicSound();
